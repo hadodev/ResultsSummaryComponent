@@ -1,0 +1,261 @@
+@import url(_font.css);
+@import url(_reset.css);
+
+:root {
+    /* fonts */
+    --font-weight: 500;
+    --font-stretch: 100%;
+
+    /* colors */
+    /* Primary */
+    --opacity: 1;
+    --clr-primary-light-red: hsl(0, 100%, 67%);
+    --clr-primary-orangey-yellow: hsl(39, 100%, 56%);
+    --clr-primary-green-teal: hsl(166, 100%, 37%);
+    --clr-primary-cobalt-blue: hsl(234, 85%, 45%);
+
+    /* Gradients */
+    /* background */
+    --clr-gradient-light-slate-blue: hsl(252, 100%, 67%);
+    --clr-gradient-light-royal-blue: hsl(241, 81%, 54%);
+    /* circle */
+    --clr-gradient-violet-blue: hsla(256, 72%, 46%, 1);
+    --clr-gradient-persian-blue: hsla(241, 72%, 46%, 0);
+
+    /* ### Neutral */
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-pale-blue: hsl(221, 100%, 96%);
+    --clr-neutral-light-lavender: hsl(241, 100%, 89%);
+    --clr-neutral-dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+body {
+    display: grid;
+
+    font-size: 1.125rem;
+    font-family: "Hanken Grotesk", sans-serif;
+
+    place-content: center;
+    font-variation-settings: "wght" var(--font-weight), "wdth" var(--font-stretch);
+}
+
+/* utilities */
+
+.primary-light-red {
+    color: var(--clr-primary-light-red);
+}
+
+.primary-orangey-yellow {
+    color: var(--clr-primary-orangey-yellow);
+}
+
+.primary-green-teal {
+    color:var(--clr-primary-green-teal);
+}
+
+.primary-cobalt-blue {
+    color: var(--clr-primary-cobalt-blue);
+}
+
+.neutral-white {
+    color: var(--clr-neutral-white);
+}
+
+.neutral-pale-blue {
+    color: var(--clr-neutral-pale-blue);
+}
+
+.neutral-light-lavender {
+    color: var(--clr-neutral-light-lavender);
+}
+
+.neutral-dark-gray-blue {
+    color: var(--clr-neutral-dark-gray-blue);
+}
+
+.neutral-dark-gray-blue-50 {
+    color: hsl(from var(--clr-neutral-dark-gray-blue) h s l / .5);
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/* end utilites */
+
+/* media querys */
+@media (max-width: 375px) {
+    body {
+        margin: 0;
+    }
+    .card {
+        border-radius: 0 !important;
+    }
+
+    .overview {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+    }
+}
+
+/* end media querys */
+
+.card {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: clamp(375px, 70vw, 600px);
+    margin: auto;
+
+    background-color: var(--clr-neutral-white);
+    border-radius: 1rem;
+    box-shadow: 1.5rem 1.5rem 8rem 0.2rem var(--clr-neutral-pale-blue);
+
+    > * {
+        min-height: 100%;
+        padding: 2rem;
+    }
+
+    .overview {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-around;
+
+        color: var(--clr-neutral-white);
+
+        background: linear-gradient(0deg, var(--clr-gradient-light-royal-blue), var(--clr-gradient-light-slate-blue));
+        border-radius: 1rem;
+
+        & > * {
+            margin-block: 0;
+        }
+
+        h2 {
+            color: var(--clr-neutral-light-lavender);
+        }
+
+        .circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 70%;
+
+            font-weight: 700;
+            font-size: 4rem;
+
+            background: linear-gradient(0deg, var(--clr-gradient-persian-blue), var(--clr-gradient-violet-blue));
+            border-radius: 50%;
+            aspect-ratio: 1;
+
+            p {
+                max-height: 50%;
+                margin-block: 0;
+
+                &:last-child {
+                    color: var(--clr-neutral-light-lavender);
+                    font-weight: 400;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 2rem;
+            margin-block: 0;
+        }
+
+        & > p {
+            color: var(--clr-neutral-light-lavender);
+            text-align: center;
+            margin-block-start: -1rem;
+
+        }
+    }
+
+    .summary {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+
+        h2 {
+            margin-block-start: 0;
+            margin-block-end: auto;
+        }
+
+        .result {
+            display: flex;
+            width: 100%;
+            padding: 0.8rem;
+
+            border-radius: 0.5rem;
+            /* margin-block: 0.5rem; */
+            --opacity: 0.1;
+
+            &:nth-of-type(1) {
+                background-color: hsl(from var(--clr-primary-light-red) h s l / var(--opacity));
+            }
+
+            &:nth-of-type(2) {
+                background: hsl(from var(--clr-primary-orangey-yellow) h s l / var(--opacity));
+            }
+
+            &:nth-of-type(3) {
+                background: hsl(from var(--clr-primary-green-teal) h s l / var(--opacity));
+            }
+
+            &:nth-of-type(4) {
+                background: hsl(from var(--clr-primary-cobalt-blue) h s l / var(--opacity));
+            }
+
+            img {
+                margin-right: 0.5rem;
+            }
+
+            .name {
+                margin-right: auto;
+                margin-block: 0;
+            }
+
+            .points {
+                margin-block: 0;
+            }
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+
+            color: var(--clr-neutral-white);
+
+            background: var(--clr-neutral-dark-gray-blue);
+            border: none;
+            border-radius: 2rem;
+            margin-block-start: auto;
+            cursor: pointer;
+
+            &:hover {
+                background: linear-gradient(0deg, var(--clr-gradient-light-royal-blue), var(--clr-gradient-light-slate-blue));
+            }
+        }
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding-block: 0.5rem;
+
+    a {
+        color: var(--clr-primary-cobalt-blue);
+    }
+}

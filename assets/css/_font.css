@@ -1,0 +1,39 @@
+@font-face {
+    font-weight: 500;
+    font-family: "Hanken Grotesk";
+    font-style: normal;
+    src: local("Hanken Grotesk Medium"), local("HankenGrotesk-Medium"),
+        url("../fonts/static/HankenGrotesk-Medium.woff2") format("woff2"),
+        url("../fonts/static/HankenGrotesk-Medium.woff") format("woff");
+    font-display: swap;
+}
+@font-face {
+    font-weight: 700;
+    font-family: "Hanken Grotesk";
+    font-style: normal;
+    src: local("Work Sans SemiBold"), local("WorkSans-SemiBold"),
+        url("../fonts/static/HankenGrotesk-Bold.woff2") format("woff2"),
+        url("../fonts/static/HankenGrotesk-Bold.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 800;
+    font-family: "Hanken Grotesk";
+    font-style: normal;
+    src: local("Hanken Grotesk ExtraBold"), local("HankenGrotesk-ExtraBold"),
+        url("../fonts/static/HankenGrotesk-ExtraBold.woff2") format("woff2"),
+        url("../fonts/static/HankenGrotesk-ExtraBold.woff") format("woff");
+    font-display: swap;
+}
+
+@supports (font-variation-settings: normal) {
+    @font-face {
+        font-weight: 500 700 800;
+        font-family: "Hanken Grotesk";
+        font-stretch: 50% 200%;
+        src: local("Hanken Grotesk Regular"), local("HankenGrotesk-Regular"),
+            url("../fonts/HankenGrotesk-Regular.woff2") format(woff2) tech(variations),
+            url("../fonts/HankenGrotesk-Regular.woff2") format("woff2-variations");
+    }
+}
