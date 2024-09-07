@@ -41,34 +41,6 @@ body {
 
 /* utilities */
 
-.primary-light-red {
-    color: var(--clr-primary-light-red);
-}
-
-.primary-orangey-yellow {
-    color: var(--clr-primary-orangey-yellow);
-}
-
-.primary-green-teal {
-    color:var(--clr-primary-green-teal);
-}
-
-.primary-cobalt-blue {
-    color: var(--clr-primary-cobalt-blue);
-}
-
-.neutral-white {
-    color: var(--clr-neutral-white);
-}
-
-.neutral-pale-blue {
-    color: var(--clr-neutral-pale-blue);
-}
-
-.neutral-light-lavender {
-    color: var(--clr-neutral-light-lavender);
-}
-
 .neutral-dark-gray-blue {
     color: var(--clr-neutral-dark-gray-blue);
 }
@@ -111,7 +83,7 @@ body {
     margin: auto;
 
     background-color: var(--clr-neutral-white);
-    border-radius: 1rem;
+    border-radius: 2rem;
     box-shadow: 1.5rem 1.5rem 8rem 0.2rem var(--clr-neutral-pale-blue);
 
     > * {
@@ -129,7 +101,7 @@ body {
         color: var(--clr-neutral-white);
 
         background: linear-gradient(0deg, var(--clr-gradient-light-royal-blue), var(--clr-gradient-light-slate-blue));
-        border-radius: 1rem;
+        border-radius: 2rem;
 
         & > * {
             margin-block: 0;
@@ -188,8 +160,7 @@ body {
         height: 100%;
 
         h2 {
-            margin-block-start: 0;
-            margin-block-end: auto;
+            margin-block: auto;
         }
 
         .result {
@@ -203,18 +174,35 @@ body {
 
             &:nth-of-type(1) {
                 background-color: hsl(from var(--clr-primary-light-red) h s l / var(--opacity));
+
+                p:first-of-type {
+                    color: var(--clr-primary-light-red);
+                }
             }
 
+            
             &:nth-of-type(2) {
                 background: hsl(from var(--clr-primary-orangey-yellow) h s l / var(--opacity));
+
+                p:first-of-type {
+                    color: var(--clr-primary-orangey-yellow);
+                }
             }
 
             &:nth-of-type(3) {
                 background: hsl(from var(--clr-primary-green-teal) h s l / var(--opacity));
+
+                p:first-of-type {
+                    color: var(--clr-primary-green-teal);
+                }
             }
 
             &:nth-of-type(4) {
                 background: hsl(from var(--clr-primary-cobalt-blue) h s l / var(--opacity));
+
+                p:first-of-type {
+                    color: var(--clr-primary-cobalt-blue);
+                }
             }
 
             img {

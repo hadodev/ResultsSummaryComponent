@@ -21,7 +21,7 @@ function populateResult(obj) {
     result.innerHTML =
     /* html */
     `<img src="${obj.icon}" alt="${obj.category} icon" />
-    <p class="name primary-light-red">${obj.category}</p>
+    <p class="name bold">${obj.category}</p>
     <p class="points neutral-dark-gray-blue-50 bold"><span class="neutral-dark-gray-blue">${obj.score}</span> / 100</p>`;
     
     container.insertBefore(result, button);
